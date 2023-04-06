@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" />
+
+    <!-- JQUERY -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="./index.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/root.css">
+    <link rel="stylesheet" href="./css/style.css">
+
+    <!-- TITLE -->
+    <title>Vinícius Braz | Prova 1</title>
+</head>
+<body>
+    <style>
+        header {
+            top: 0;
+            z-index: 9;
+            display: flex;
+            position: sticky;
+            padding: 10px 20px;
+            align-items: center;
+            background: var(--branco);
+            justify-content: space-between;
+            box-shadow: 0 0 10px var(--shadow-google);
+        }
+
+        header img {
+            width: 100px;
+        }
+
+        header nav ul {
+            display: flex;
+            list-style: none;
+        }
+
+        header nav ul li {
+            margin: 0 10px;
+            cursor: pointer;
+            transition: var(--transition_fast);
+        }
+        header nav ul li:hover {
+            color: var(--purple);
+        }
+
+    </style>
+    <header>
+        <img src="./img/logo.png" alt="Logo xyz">
+        <nav>
+            <ul>
+                <li>Início</li>
+                <li>Cursos</li>
+                <li>Sobre</li>
+                <li>Contato</li>
+            </ul>
+        </nav>
+    </header>
+
+    <style>
+        section {
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        section .header h3 {
+            margin: 0 auto;
+            width: fit-content;
+            margin-bottom: 15px;
+            color: var(--purple);
+            border-bottom: 2px solid var(--purple);
+        }
+        
+        #cursos table {
+            width: 100%;
+            border-radius: 4px;
+            background: var(--branco);
+            -webkit-box-shadow: 0 0 10px var(--shadow-google);
+        }
+
+        #cursos table thead th {
+            padding: 15px 5px;
+            color: var(--cinza_escuro);
+            background-color: var(--branco);
+            border-bottom: 1px solid var(--shadow-google);
+        }
+
+        #cursos table tbody td {
+            padding: 15px 5px;
+            text-align: center;
+        }
+
+        #cursos table tbody tr:hover {
+            background: var(--purple50);
+        }
+
+        #cursos table tbody tr:hover td i {
+            color: var(--purple);
+        }
+    </style>
+    <section id="cursos">
+        <div class="header">
+            <h3>Cursos Oferecidos</h3>
+        </div>
+        <table>
+            <thead>
+                <th style="text-align: start;">Curso</th>
+                <th>Duração</th>
+                <th>Turno</th>
+                <th>Valor</th>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </section>
+
+    <style>
+        #noticias .cards {
+            padding: 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        #noticias .cards .card {
+            width: 300px;
+            margin: 20px;
+            border-radius: 4px;
+            background: var(--branco);
+            box-shadow: 0 0 10px var(--shadow-google);
+        }
+
+        #noticias .header h3 {
+            margin-bottom: -10px;
+        }
+
+        #noticias .cards .card img {
+            width: 100%;
+            padding: 40px 60px;
+            border-bottom: 2px solid var(--purple70);
+        }
+
+        #noticias .cards .card .card-text {
+            padding: 20px;
+            line-height: 25px;
+            position: relative;
+            text-align: center;
+            border-bottom: 2px solid var(--purple70);
+        }
+
+        #noticias .cards .card .card-text .saiba-mais {
+            top: 0;
+            left: 0;
+            height: 0px;
+            width: 100%;
+            display: flex;
+            cursor: pointer;
+            overflow: hidden;
+            font-size: 1.2rem;
+            font-weight: bold;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            background: var(--purple);
+            transition: var(--transition_fast);
+        }
+
+        #noticias .cards .card .card-text .saiba-mais a {
+            opacity: 0;
+            color: white;
+            text-decoration: none;
+            transition: var(--transition_fast);
+        }
+
+        #noticias .cards .card:hover .card-text .saiba-mais {
+            height: calc(100% - 3px);
+        }
+
+        #noticias .cards .card:hover .card-text .saiba-mais a {
+            opacity: 1;
+        }
+    </style>
+    <section id="noticias">
+        <div class="header">
+            <h3>Notícias</h3>
+        </div>
+        <div class="cards"></div>
+    </section>
+
+    <style>
+        footer {
+            display: flex;
+            flex-wrap: wrap;
+            position: relative;
+            background: var(--purple);
+            justify-content: space-between;
+            box-shadow: 0 0 10px var(--shadow-google);
+        }
+
+        footer ul {
+            margin: 20px;
+            list-style: none;
+            max-width: 300px;
+        }
+
+        footer ul h3 {
+            width: fit-content;
+            margin-bottom: 10px;
+            border-bottom: 2px solid white;
+        }
+
+        footer ul h3, footer ul li, footer ul li strong {
+            color: white;
+            line-height: 30px;
+        }
+
+        footer ul li {
+            cursor: pointer;
+            font-weight: 200;
+            transition: var(--transition_fast);
+        }
+
+        footer ul li:hover {
+            font-weight: bold;
+        }
+
+        footer ul i {
+            padding: 10px;
+            cursor: pointer;
+            margin: 0 5px 0 0;
+            border-radius: 50%;
+            color: var(--branco);
+            background: var(--dark);
+        }
+
+        footer ul i:hover {
+            color: var(--dark);
+            background: var(--branco);
+        }
+
+        footer img {
+            right: 20px;
+            bottom: 20px;
+            width: 100px;
+            filter: sepia(10);
+            position: absolute;
+        }
+    </style>
+    <footer>
+        <ul>
+            <h3>Menu</h3>
+            <li>Início</li>
+            <li>Cursos</li>
+            <li>Sobre</li>
+            <li>Contato</li>
+        </ul>
+        <ul>
+            <h3>Informações</h3>
+            <li><strong>Endereço: </strong> Avenida Universitária, nº 123, Universitária - PR</li>
+            <li><strong>Telefone: </strong> (42) 1234-5678</li>
+            <li><strong>Email: </strong> universidade@xyz.com.br</li>
+        </ul>
+        <ul>
+            <h3>Redes Sociais</h3>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-twitter"></i>
+            <i class="fab fa-instagram"></i>
+            <i class="fab fa-youtube"></i>
+        </ul>
+        <img src="./img/youtube.png" alt="YouTube logo...">
+    </footer>
+</body>
+</html>
